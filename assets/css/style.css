@@ -1,0 +1,113 @@
+*{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+p{
+    font-weight: bold;
+    font-size:120%;
+}
+
+#temps {
+    font-weight: bolder; 
+    font-size:120%; 
+    color:rgb(0, 0, 0)!important;
+}
+#cardinfo{
+    font-weight: bold;
+    color:rgb(0, 0, 0)!important;
+}
+#card-title{
+    font-size: 150%;
+    color: rgb(0, 0, 0)!important;
+}
+
+#background{
+    background-image: url(./time4.jpg);
+    /* background-repeat: no-repeat;
+    background-size: 100%; */
+}
+#header{
+    background-image: url(./loop.gif);
+    background-repeat: no-repeat;
+    background-size: 3%;
+    background-position: 32% 29%;
+    color: rgb(255, 241, 115)!important;
+    padding: 1px;
+    text-align: bottom;
+
+}
+
+#current{
+    color: rgb(255, 245, 157);
+    background-image: url(./current.gif);
+    background-repeat: no-repeat;
+    background-position: 100% 10%;
+    background-size: 20%;
+   }
+
+
+#fiveDay{
+    margin-top: 10px;
+}
+#fiverCards{
+    background-image : url(./time2.gif);
+    background-position: 65% 0%;
+    border-radius: 20px;
+}
+#searchBtn{
+    font-size:130%;
+    background-color: rgb(255, 241, 115);
+    color: black
+}
+
+#searchtxt{
+    font-style:bold;
+    color: rgb(255, 241, 115)
+}
+#presets button {
+    font-size:130%;
+    font-weight: bold;
+    color: rgb(245, 243, 119)
+    
+}
+
+#Austin {
+    background-image: url(./austin.jpg);
+    background-position: 30% 30%
+    
+}
+
+#Chicago {
+    background-image: url(./chicago.jpg);
+    background-position: 90% 43%
+}
+
+#New {
+    background-image: url(./newyork.jpg);
+    background-position: 40% 19%;
+}
+
+#Orlando {
+    background-image: url(./orlando.jpg);
+    background-position: 40% 30%; 
+}
+
+#San {
+    background-image: url(./san.jpg);
+    background-position: 10% 60%
+}
+
+#Seattle {
+    background-image: url(./seattle.jpg);
+    background-position: 10% 38%;
+}
+
+#Denver {
+    background-image: url(./denver.jpg);
+    background-position: 15% 9%
+}
+
+#Atlanta {
+    background-image: url(./atl.jpg);
+    background-position: 50% 31.9%
+}
+
