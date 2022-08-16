@@ -15,14 +15,100 @@ let inputEl = $('#userInput');
 var longitude ='';
 var latitude =''
 
-// Add event listener when user click or search for a city 
+// Add event listener when user press enter 
 
 inputEl.keypress(function(event) {
     if (event.keyCode === 13) {
-        currentData();
+        currentData(inputEl.val())
+        addToRecentSearches(inputEl.val());
     }
 });
-search.on('click' ,currentData);
+// search.on('click' , currentData, addToRecentSearches);
+
+search.on("click", function(event) {
+    event.preventDefault();;
+    var input = inputEl.val()
+    if (input == "") {
+      return;
+    } else {
+      currentData(input);
+      addToRecentSearches(input);
+    }
+  });
+
+
+// Load Recent Searches from Local Storage
+  getRecentSearches();
+
+// Search History 
+
+var citiesData = [];
+
+function addToRecentSearches(input) {
+$("#recent-searches").show();
+
+// Create Element
+var newCity = $("<li>");
+newCity.addClass("list-group-item");
+newCity.text(input);
+// Append to List
+$("#recent-searches-list").prepend(newCity);
+
+var cityObj = {
+input: input
+};
+
+citiesData.push(cityObj);
+
+// Save to localStorage
+localStorage.setItem("searches", JSON.stringify(citiesData));
+}
+  
+// Onclick listener to search list items
+$("#recent-searches-list").on("click", "li.list-group-item", function() {
+var history = $(this).text();
+  
+  weatherURL = 'https://api.openweathermap.org/data/2.5/weather?q='+ history +'&units=imperial&appid=35d94501369d43748d1a83d5811f76e7';
+  console.log(weatherURL);
+  fetch(weatherURL)
+  .then(response => response.json())
+  .then(data => {
+      longitude = data.coord.lon;
+      latitude = data.coord.lat;
+      var iconCode=data.weather[0].icon;
+      var iconurl = "https://openweathermap.org/img/wn/" + iconCode + ".png";
+  fetch(iconurl)
+      .then(data => {
+          icon.attr('src', data.url)
+      });
+      city.text(`${data.name} (${getDate(data.dt)})`);
+      currentWeather();
+  });
+}); 
+          
+
+// Get Recent Searches from localStorage
+	function getRecentSearches() {
+	  var searches = JSON.parse(localStorage.getItem("searches"));
+	  if (searches != null) {
+		for (var i = 0; i < searches.length; i++) {
+// Create Element
+		  var newCity = $("<li>");
+		  newCity.addClass("list-group-item");
+		  newCity.text(searches[i].input);
+// Append to List
+		  $("#recent-searches-list").prepend(newCity);
+		}
+		$("#recent-searches").show();
+	  } else {
+		$("#recent-searches").hide();
+	  }
+	}
+    
+    $("#clearBtn").on("click", function() {
+        localStorage.clear();
+        $("#recent-searches-list").empty();
+    });
 
 // Take users' country/city/state input, fetch latitude and longtitude from five day API
 
