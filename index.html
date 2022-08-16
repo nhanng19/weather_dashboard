@@ -25,7 +25,15 @@
                     <input class ='rounded border-1'type = 'text' id ="userInput" placeholder="Enter Country, State, or City"/>
                     <br>
                     <button class = 'my-1 mt-2 rounded' id ="searchBtn" type ="button">Search</button>
+                    <div class="card mt-5" id="recent-searches">
+                        <h1 class ='display-6' id='searchtxt'>Search history:</h1>
+                        <ul class="list-group list-group-flush" id="recent-searches-list">
+                         </ul> 
+                         <button class = 'my-1 mt-2 rounded' id='clearBtn'>Clear History</button>
+                      </div>
+                    
                 </div>
+                <div class ="list-group" id= "cityList"></div>
                 <div class ='row py-2' id ='presets'>
                     <button class = 'my-1 rounded'type="button" id='Austin'>Austin</button>
                     <br>
@@ -64,8 +72,9 @@
         </div>
 
     </main>
-
-    <script src= "./assets/js/script.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+     <script src= "./assets/js/script.js"></script>
 
 </body>
 </html>
