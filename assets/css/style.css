@@ -6,6 +6,15 @@ p{
     font-size:120%;
 }
 
+.list-group-item{
+    background-color: rgba(255, 0, 0, 0)!important;
+    background-image: url(./spark.gif)!important;
+    background-repeat: none!important; 
+    background-position: 80% -1.5%!important;
+    background-size: 120%!important;
+    color: rgb(255, 241, 115)!important;
+    text-align: center!important;
+}
 #temps {
     font-weight: bolder; 
     font-size:120%; 
@@ -22,8 +31,7 @@ p{
 
 #background{
     background-image: url(./time4.jpg);
-    /* background-repeat: no-repeat;
-    background-size: 100%; */
+
 }
 #header{
     background-image: url(./loop.gif);
@@ -59,9 +67,20 @@ p{
     color: black
 }
 
+
+#clearBtn{
+    font-size:130%;
+    background-color: rgb(255, 241, 115);
+    color: black
+}
 #searchtxt{
     font-style:bold;
     color: rgb(255, 241, 115)
+}
+#recent-searches {
+    background: none;
+    color: rgb(255, 241, 115);
+    font-style: bold;
 }
 #presets button {
     font-size:130%;
@@ -69,6 +88,7 @@ p{
     color: rgb(245, 243, 119)
     
 }
+
 
 #Austin {
     background-image: url(./austin.jpg);
