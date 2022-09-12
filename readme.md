@@ -56,18 +56,21 @@ Animate five day cards
 ```
 Specific functions in JavaScript file
 
-```
-// Add event listener when user click or search for a city 
 
+Add event listener when user click or search for a city 
+
+```javascript
 inputEl.keypress(function(event) {
     if (event.keyCode === 13) {
         currentData();
     }
 });
 search.on('click' ,currentData);
+```
 
-// Take users' country/city/state input, fetch latitude and longtitude from five day API
+Take users' country/city/state input, fetch latitude and longtitude from five day API
 
+```javascript
 function currentData() {
     var city_name = inputEl.val();
     weatherURL = 'https://api.openweathermap.org/data/2.5/weather?q='+ city_name +'&units=imperial&appid=35d94501369d43748d1a83d5811f76e7';
@@ -87,9 +90,11 @@ function currentData() {
         currentWeather();
     });
 }; 
+```
 
-// Take latitude and longtitude, fetch temperature, wind, humidty, UV Index, sunrise, and sunset data from five day API and update current weather
+Take latitude and longtitude, fetch temperature, wind, humidty, UV Index, sunrise, and sunset data from five day API and update current weather
 
+```javascript
 function currentWeather(){
     urlWeather ="https://api.openweathermap.org/data/2.5/onecall?lat=" + latitude +"&lon=" + longitude + "&units=imperial&appid=35d94501369d43748d1a83d5811f76e7";
     console.log(urlWeather);
@@ -104,9 +109,11 @@ function currentWeather(){
         uv.text(`UV Index: ${data.current.uvi}`);
         sunrise.text(`Sunrise: ${getTime(data.current.sunrise)}AM  `);
         sunset.text(`Sunset: ${getTime(data.current.sunset)}PM`);
+```
 
-// Loop 5 times to create a card for each of the next 5 days using API
+Loop 5 times to create a card for each of the next 5 days using API
 
+```javascript
         fiveDay.empty();
 
         console.log(data.daily)
@@ -126,9 +133,11 @@ function currentWeather(){
         }
     });
 };
+```
 
-// Manipulate DOM to create cards
+Manipulate DOM to create cards
 
+```javascript
 function fiverCards (date,icon,tempH,tempL,windSpeed,windDir,humidity,sunrise,sunset){
     
     fiveDay.append(`<div class="card d-inline-flex mx-3" style="width: 13rem;border-radius: 20px;background-color:black;">
@@ -146,9 +155,12 @@ function fiverCards (date,icon,tempH,tempL,windSpeed,windDir,humidity,sunrise,su
     </div>
     </div>`);
 };
+```
 
-// Loop through preset cities, fetch data, and update current weather 
+Loop through preset cities, fetch data, and update current weather 
 
+
+```javascript
 var names = ['Austin', 'Chicago', 'new york', 'Orlando', 'san francisco', 'Seattle', 'Denver', 'Atlanta']
 var cities = [$('#Austin'), $('#Chicago'), $('#New'), $('#Orlando'), $('#San'), $('#Seattle'), $('#Denver'), $('#Atlanta')]
 for (let i = 0; i < cities.length && names.length; i++) {
@@ -173,7 +185,6 @@ cities[i].on('click',()=>{
         currentWeather();
         });
 })};
-
 ```
 
 
