@@ -1,38 +1,8 @@
-# 06_Weather_Dashboard_NN
-Server-side APIs: Weather Dashboard
-## The Challenge
-Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Our client Spacex requests us to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS. 
+# Weather Dashoard
 
 ![](./assets/css/front.gif)
 
-
-## User Story
-
-```
-AS A traveler
-I WANT to see the weather outlook for multiple cities
-SO THAT I can plan a trip accordingly
-```
-
-## Acceptance Criteria
-
-```
-GIVEN a weather dashboard with form inputs
-WHEN I search for a city
-THEN I am presented with current and future conditions for that city and that city is added to the search history
-WHEN I view current weather conditions for that city
-THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
-WHEN I view the UV index
-THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
-WHEN I view future weather conditions for that city
-THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
-WHEN I click on a city in the search history
-THEN I am again presented with current and future conditions for that city
-``` 
-
 ## The Process
-
-To satisfy our client's needs, we had to:
 - Create weather dashboard that updates data based on users' input and selection
 - Create HTML file that imports JS Moment library, Bootstrap, CSS file, and JavaScript file
 - Provide space theme with our CSS file
@@ -191,7 +161,6 @@ cities[i].on('click',()=>{
 ## The Result
 After importing bootstrap, jQuery, and Moment to our HTML file along with dynamically coding Javascript while utilizing Five Day's Weather API and stylizing with CSS, we were able to provide a clean, interactive, function, and informative weather dashboard for our client. 
 
-## Submission
 This project was uploaded to GitHub at the following repository link:
 [https://github.com/nhanng19/weather_dashboard](https://github.com/nhanng19/weather_dashboard)
 
